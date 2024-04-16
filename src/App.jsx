@@ -34,6 +34,7 @@ function App() {
     }
     async function getPhotos() {
       try {
+        setError(false);
         setIsLoading(true);
         const data = await fetchPhotos(query, page);
         setImages((prevImages) => {
@@ -58,7 +59,7 @@ function App() {
 
       <Loader isloading={isloading} />
 
-      {images.length > 0 && <LoadMoreBtn onClick={handleLoadMore} />}
+      {images.length > 0 && <LoadMoreBtn isLoadMore={true} onClick={handleLoadMore} />}
     </>
   );
 }
