@@ -1,10 +1,9 @@
+import styles from './ImageCard.module.css'
 
-  export default function ImageCard({ image }) {
-    const { id, title, urls: { small} } = image;
-
-    return (
-      <div key={id}>
-        <img src={small} alt={title} />
-      </div>
-    );
+export default function ImageCard({ image, onClick }) {
+  return (
+    <div className={styles.wrap} onClick={() => onClick(image.urls.small)}> 
+      <img className={styles.img} src={image.urls.small} alt={image.alt_description} />
+    </div>
+  );
 }

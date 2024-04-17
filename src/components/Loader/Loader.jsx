@@ -1,7 +1,9 @@
 import { Blocks } from "react-loader-spinner";
-export default function Loader({ isloading }) {
+import styles from './Loader.module.css'
+
+export default function Loader({ isLoading }) {
   return (
-    isloading && (
+    isLoading && (
       <Blocks
         height="80"
         width="80"

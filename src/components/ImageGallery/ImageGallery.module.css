@@ -1,9 +1,7 @@
-
-
 .list{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 16px;
     list-style-type: none;
 }

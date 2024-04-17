@@ -1,8 +1,12 @@
-.form{
-    
+.form {
   width: 100%;
-  background-color: #4169E1;
-    padding: 8px 0;
+  background-color: #4169e1;
+  padding: 8px 0;
   margin-left: -20px;
   margin-right: -20px;
+}
+
+.input{
+  padding: 10px;
+
 }
