@@ -1,6 +1,6 @@
 
   export default function ImageCard({ image }) {
-    const { id, title, urls: { small } } = image;
+    const { id, title, urls: { small} } = image;
 
     return (
       <div key={id}>
