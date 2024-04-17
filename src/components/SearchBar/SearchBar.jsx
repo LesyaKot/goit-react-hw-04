@@ -39,6 +39,7 @@
 
 import { Formik, Form, Field } from "formik";
 import { Toaster, toast } from "react-hot-toast";
+import styles from './SearchBar.module.css'
 
 export default function SearchBar({ onSearch }) {
   const notify = () => {
@@ -46,6 +47,7 @@ export default function SearchBar({ onSearch }) {
   };
 
   return (
+    
     <Formik
       initialValues={{ query: "" }}
       onSubmit={(values, actions) => {
@@ -57,8 +59,8 @@ export default function SearchBar({ onSearch }) {
         actions.resetForm();
       }}
     >
-      <Form>
-        <Field
+      <Form className={styles.form}>
+        <Field 
           type="text"
           autoComplete="off"
           autoFocus
@@ -66,10 +68,11 @@ export default function SearchBar({ onSearch }) {
           name="query"
         />
         <div>
-          <button type="submit">Search</button>
+          {/* <button type="submit">Search</button> */}
           <Toaster />
         </div>
       </Form>
     </Formik>
+    
   );
 }
