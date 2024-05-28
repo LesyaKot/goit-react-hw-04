@@ -7,6 +7,7 @@ import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import Loader from "./components/Loader/Loader";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
+import { useTheme } from "./ThemeContext/ThemeContext";
 
 function App() {
   const [images, setImages] = useState([]);
@@ -16,6 +17,9 @@ function App() {
   const [query, setQuery] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+
+  // const themeCtx = useTheme();
+  const { theme } = useTheme();
 
   const handleSearch = async (newQuery) => {
     setQuery(newQuery);
@@ -55,8 +59,15 @@ function App() {
     getPhotos();
   }, [page, query]);
 
+
+
+  
+      
+   
   return (
     <>
+    <div className={theme === 'dark' ? 'darkTheme' : 'lightTheme'}>
+    
       <SearchBar onSearch={handleSearch} />
 
       {images.length > 0 && (
@@ -76,7 +87,11 @@ function App() {
         isOpen={modalIsOpen}
         onClose={closeModal}
       />
+      {/* <p>Current theme: {theme}</p> */}
+
+      </div>
     </>
+    
   );
 }
 

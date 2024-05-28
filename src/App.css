@@ -11,6 +11,17 @@
   left: 0;
 }
 
+
+.darkTheme {
+  background-color: #333;
+  color: #fff;
+}
+
+.lightTheme {
+  background-color: #fff;
+  color: #333;
+}
+
 /* .logo {
   height: 6em;
   padding: 1.5em;
